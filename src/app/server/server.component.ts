@@ -11,5 +11,7 @@ serverStatus: string = 'offline';
 getServerStatus(){
     return this.serverStatus;
 }
-
+onUpdateServerName(event: any){
+console.log(event)
+}
 }
