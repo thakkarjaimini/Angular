@@ -9,13 +9,14 @@ import { Component, OnInit } from '@angular/core';
   // <app-server></app-server>`,
   templateUrl:'./servers.component.html',
   styleUrls: ['./servers.component.css']
-})
+     })
 export class ServersComponent implements OnInit {
 
 allowNewServer = false;
 serverCreationStatus = 'No Server Created';
   serverName ='Test server string';
   serverCreated = false;
+  servers =['TestServer','Test Server 2'];
   constructor() {
     setTimeout(()=>{this.allowNewServer = true;}, 2000)
    }
@@ -25,6 +26,7 @@ serverCreationStatus = 'No Server Created';
   }
   onCreateServer(){
     this.serverCreated = true;
+    this.servers.push(this.serverName);
     this.serverCreationStatus= 'Server is created! Name is '+this.serverName;
   }
 onUpdateServerName(event: any){
