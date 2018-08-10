@@ -1,0 +1,15 @@
+<button class = "btn btn-Primary" 
+        (click) = "onToggle()">
+Display Details
+</button>
+<p *ngIf ="displayText; else noDisplay"> This is my Directive. {{pText}}</p>
+  <ng-template #noDisplay>
+  <p> 
+    </p>
+  </ng-template>
+  <div *ngFor="let click of buttonClicks"
+    [ngStyle] ="{backgroundColor: click>=5?'blue': 'transparent'}"
+    [ngClass] ="{'white-text' : click>=5}">
+    {{click}}
+  </div>
+
